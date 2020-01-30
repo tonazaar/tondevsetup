@@ -1,8 +1,8 @@
-# tondevsetup
+### Tondev setup
 Setup ton dev environment in Ubuntu
 
 
-## Install docker
+#### Install docker
 Docker  >= 19.x installed
 
 > https://docs.docker.com/install/linux/docker-ce/ubuntu/
@@ -10,12 +10,12 @@ Docker  >= 19.x installed
 
 
 
-## Install nodejs
+#### Install nodejs
 Node.js >= 10.x installed
 
 > https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
 
-## Install tondev
+#### Install tondev
 Set environment before install
 
 ```javascript
@@ -27,11 +27,11 @@ export NPM_CONFIG_PREFIX=~/.npm-global
 tondev setup
 
 
-## Sanity test with node.js application
+#### Sanity test with node.js application
 
 https://docs.ton.dev/86757ecb2/p/665008
 
-### Create hello.sol file
+##### Create hello.sol file
 
 ```javascript
 
@@ -66,7 +66,7 @@ contract HelloTON {
 
 ```
 
-### Run command
+##### Run command
 
 ```javascript
 
@@ -76,7 +76,7 @@ npm install --save ton-client-node-js@latest
 
 ```
 
-### Create example1.js with
+##### Create example1.js with
 
 ```javascript
 
@@ -103,7 +103,7 @@ async function main(client) {
 
 ```
 
-### Create example2.js with
+##### Create example2.js with
 
 ```javascript
 const { TONClient } = require('ton-client-node-js');
@@ -137,18 +137,18 @@ async function main(client) {
 
 This example gives error. This is solved in example3.js
 
-## Running the contract
+#### Running the contract
 
-###runLocal
+##### runLocal
 
 
-###run
+##### run
 
-## Using helper function
+#### Using helper function
 
-### Creating helper function
+##### Creating helper function
 
-### Using helper functions
+##### Using helper functions
 
 ```javascript
  const hello = new HelloContract(client, helloAddress, helloKeys);
@@ -163,10 +163,10 @@ This example gives error. This is solved in example3.js
 
 ```
 
-# Sanity test with javsacript application
+#### Sanity test with javsacript application
 
 
-# Sanity test with React native application
+#### Sanity test with React native application
 
 
 
