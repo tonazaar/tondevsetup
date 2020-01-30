@@ -2,27 +2,38 @@
 Setup ton dev environment in Ubuntu
 
 
-# Install docker
+## Install docker
 Docker  >= 19.x installed
 
-# Install nodejs
+> https://docs.docker.com/install/linux/docker-ce/ubuntu/
+  
+
+
+
+## Install nodejs
 Node.js >= 10.x installed
 
-# Install tondev
+> https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-18-04
+
+## Install tondev
 Set environment before install
 
+```javascript
 export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 
+```
 
 tondev setup
 
 
-# Sanity test with node.js application
+## Sanity test with node.js application
 
 https://docs.ton.dev/86757ecb2/p/665008
 
-Create hello.sol file
+### Create hello.sol file
+
+```javascript
 
 pragma solidity ^0.5.4;
 
@@ -53,13 +64,21 @@ contract HelloTON {
     }
 }
 
+```
 
-Run command
+### Run command
+
+```javascript
+
 tondev sol hello -l js -L deploy
 
 npm install --save ton-client-node-js@latest
 
-Create example1.js with
+```
+
+### Create example1.js with
+
+```javascript
 
 const { TONClient } = require('ton-client-node-js');
 
@@ -82,9 +101,11 @@ async function main(client) {
 })();
 
 
+```
 
-Create example2.js with
+### Create example2.js with
 
+```javascript
 const { TONClient } = require('ton-client-node-js');
 HelloContract = require('./helloContract');
 
@@ -112,29 +133,35 @@ async function main(client) {
         console.error(error);
     }
 })();
+```
 
 This example gives error. This is solved in example3.js
 
-# Running the contract
-runLocal
-run
+## Running the contract
 
-# Using helper function
+###runLocal
 
-Creating helper function
 
-Using helper functions
+###run
 
-  const hello = new HelloContract(client, helloAddress, helloKeys);
+## Using helper function
+
+### Creating helper function
+
+### Using helper functions
+
+```javascript
+ const hello = new HelloContract(client, helloAddress, helloKeys);
  await hello.deploy();
-         console.log(hello.address, hello.keys);
+ console.log(hello.address, hello.keys);
  var response = await hello.sayHello();
- console.log(response);
-// const response = await hello.runLocal('sayHello', {});
+ console.log("type-1 :"+ response);
+ response = await hello.runLocal('sayHello', {});
+ console.log("type-2 :"+ response);
  response = await hello.run('sayHello', {});
- console.log(response);
+ console.log("type-3 :"+ response);
 
-
+```
 
 # Sanity test with javsacript application
 
