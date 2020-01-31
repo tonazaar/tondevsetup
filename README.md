@@ -23,9 +23,14 @@ export PATH=~/.npm-global/bin:$PATH
 export NPM_CONFIG_PREFIX=~/.npm-global
 
 ```
+Run commands
+```
+npm install -g ton-dev-cli
+
 
 tondev setup
 
+```
 
 #### Sanity test with node.js application
 
@@ -135,39 +140,16 @@ async function main(client) {
 })();
 ```
 
-This example gives error. This is solved in example3.js
+This example gives error. This is solved in later examples
 
-#### Running the contract
+#### Link to examples     
 
-##### runLocal
-
-
-##### run
-
-#### Using helper function
-
-##### Creating helper function
-
-##### Using helper functions
-
-```javascript
- const hello = new HelloContract(client, helloAddress, helloKeys);
- await hello.deploy();
- console.log(hello.address, hello.keys);
- var response = await hello.sayHello();
- console.log("type-1 :"+ response);
- response = await hello.runLocal('sayHello', {});
- console.log("type-2 :"+ response);
- response = await hello.run('sayHello', {});
- console.log("type-3 :"+ response);
-
-```
-
-#### Sanity test with javsacript application
-
-
-#### Sanity test with React native application
-
+[Example1](https://github.com/tonazaar/tonbasic#example1)
+[Example2](https://github.com/tonazaar/tonbasic#example2)
+[Example3](https://github.com/tonazaar/tonbasic#example3)
+[Example4](https://github.com/tonazaar/tonbasic#example4)
+[Example5](https://github.com/tonazaar/tonbasic#example5)
+[Example6](https://github.com/tonazaar/tonbasic#example6)
 
 
 
